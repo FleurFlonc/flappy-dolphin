@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>🐬 Flappy Dolphin</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #0b1020;
+      overflow: hidden;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      touch-action: manipulation;
+    }
+    #hud {
+      position: fixed;
+      left: 12px;
+      top: 10px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+      font: 16px system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      z-index: 10;
+      user-select: none;
+    }
+    #overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      z-index: 20;
+      font: 18px system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+    #card {
+      width: min(520px, calc(100% - 24px));
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+    }
+    #btn {
+      margin-top: 12px;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px;
+      font-weight: 700;
+      background: #fff;
+      color: #0b1020;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="hud">
+  <div id="score">Score: 0</div>
+  <div id="high">Highscore: 0</div>
+</div>
+
+<canvas id="c"></canvas>
+
+<div id="overlay">
+  <div id="card">
+    <h1>🐬 Flappy Dolphin</h1>
+    <p>Tap of klik om omhoog te gaan.</p>
+    <p>Hoe verder je komt, hoe moeilijker het wordt.</p>
+    <button id="btn">Start</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js");
+  }
+</script>
+
+</body>
+</html>
