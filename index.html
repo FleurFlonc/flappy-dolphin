@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>🐬 Flappy Dolphin: Ocean Run</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#062033" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #062033;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      touch-action: manipulation;
+    }
+    #hud {
+      position: fixed;
+      left: 12px;
+      top: 10px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      font: 16px system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      z-index: 10;
+      user-select: none;
+      text-shadow: 0 2px 10px rgba(0,0,0,.35);
+    }
+    #overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      z-index: 20;
+      font: 18px system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+    #card {
+      width: min(560px, calc(100% - 24px));
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+    #card h1 { margin: 0 0 10px; font-size: 22px; }
+    #card p { margin: 6px 0; opacity: .92; }
+    #btn {
+      margin-top: 12px;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px;
+      font-weight: 800;
+      background: #ffffff;
+      color: #062033;
+      width: 100%;
+      cursor: pointer;
+    }
+    #tiny { font-size: 13px; opacity: .85; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<div id="hud">
+  <div id="score">Score: 0</div>
+  <div id="high">Highscore: 0</div

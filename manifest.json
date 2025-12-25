@@ -1,0 +1,8 @@
+{
+  "name": "Flappy Dolphin: Ocean Run",
+  "short_name": "FlappyDolphin",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#062033",
+  "theme_color": "#062033"
+}
